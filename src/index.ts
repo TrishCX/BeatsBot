@@ -1,10 +1,10 @@
 require("dotenv").config();
 import { ExtendedClient } from "./structures/Client";
 import http from "http";
-
 export const client = new ExtendedClient();
-
 client.start();
+
+require("./player");
 
 http
   .createServer(function (req, res) {

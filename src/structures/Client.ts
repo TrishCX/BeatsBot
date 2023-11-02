@@ -16,7 +16,7 @@ const globPromise = promisify(glob);
 
 export class ExtendedClient extends Client {
   commands: Collection<string, CommandType> = new Collection();
-
+  playerEvents: Collection<string, string> = new Collection();
   constructor() {
     super({
       intents: [
@@ -25,6 +25,7 @@ export class ExtendedClient extends Client {
         GatewayIntentBits.GuildBans,
         GatewayIntentBits.GuildMessages,
         GatewayIntentBits.MessageContent,
+        GatewayIntentBits.GuildVoiceStates,
       ],
       partials: [Partials.Message, Partials.GuildMember, Partials.Channel],
     });
@@ -76,5 +77,7 @@ export class ExtendedClient extends Client {
       const event: Event<keyof ClientEvents> = await this.importFile(filePath);
       this.on(event.event, event.run);
     });
+
+    //Player Events
   }
 }
