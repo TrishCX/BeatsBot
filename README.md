@@ -27,8 +27,8 @@ To install BeatsBot, follow these simple steps:
 4. Set up your Discord bot token and other configurations in a `.env` file:
 
    ```sh
-   BOT_TOKEN=YOUR_DISCORD_BOT_TOKEN
-   PREFIX=YOUR_BOT_PREFIX
+   botToken=YOUR_DISCORD_BOT_TOKEN
+   guildiD=YOUR_GUILD_ID
    ```
 
    Replace `botToken` with your actual Discord bot token and `guildiD` with the server id in which you want to use the bot.
